@@ -8,7 +8,7 @@ const props = defineProps<{
 </script>
 
 <template >
-    <BookMiniature v-for="book in props.data.books" :book="book" v-if="props.data?.__typename === 'BooksPayload'"></BookMiniature>
+    <BookMiniature v-for="book in props.data.books" :book="book" v-if="props.data?.__typename === 'BooksPayload'" :key="book._id"></BookMiniature>
     <div v-if="props.data?.__typename === 'AuthorsPayload'" v-for="author in props.data.authors" :key="author._id">
         <span><router-link class=" hover:font-bold" :to="`/author/${author._id}`">{{ author.name }}</router-link></span>
     </div>

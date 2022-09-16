@@ -72,7 +72,7 @@ const isInCollection = computed(() => {
                 <span>Title: {{ bookData?.title }}</span>
                 <span>
                     Author(s):
-                    <router-link :to="`/author/${author._id}`" v-for="author in bookData?.authors"
+                    <router-link :to="`/author/${author._id}`" v-for="author in bookData?.authors" :key="author._id"
                         class="hover:underline hover:font-bold">{{ `${author.name} `
                         }}
                     </router-link>
